@@ -145,6 +145,13 @@ jobs:
       - name: Install dependencies
         run: |
           make build
+      -
+        name: Login to Nautilus Gitlab Docker Registry
+        uses: docker/login-action@v3
+        with:
+          registry: gitlab-registry.nrp-nautilus.io
+          username: "kingb12"
+          password: ${{ secrets.GITLAB_DOCKER_REGISTRY_TOKEN }}
 
       - name: Build and push SWE-Bench images
         run: |
