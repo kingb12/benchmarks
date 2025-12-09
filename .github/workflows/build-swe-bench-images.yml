@@ -56,6 +56,7 @@ jobs:
         github.event.label.name == 'build-swebench-50' ||
         github.event.label.name == 'build-swebench-200'))
 
+    runs-on: ubuntu-latest
 
     # Allow pushing to GHCR and commenting on issues
     permissions:
